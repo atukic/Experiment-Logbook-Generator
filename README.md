@@ -3,10 +3,30 @@
 GUI tool for generating beamline experiment logbooks from HDF5, XRD, and
 temperature log files.
 
-## Install
+## Install with pip
 
 Install Python 3.10 or newer first. On Windows, use the installer from
 python.org and enable "Add python.exe to PATH".
+
+## Install from GitHub
+
+In Anaconda Prompt or PowerShell:
+
+```powershell
+conda create -n experiment-logbook python=3.10 -y
+conda activate experiment-logbook
+python -m pip install git+https://github.com/atukic/Experiment-Logbook-Generator.git
+experiment-logbook
+```
+
+To update an existing GitHub install:
+
+```powershell
+conda activate experiment-logbook
+python -m pip install --upgrade --force-reinstall git+https://github.com/atukic/Experiment-Logbook-Generator.git
+```
+
+## Install from a Local Folder
 
 From this folder:
 
