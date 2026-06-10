@@ -1,0 +1,180 @@
+Experiment Logbook Generator - Installation
+===========================================
+
+This app can be installed with pip from this folder or from a zipped copy of
+this folder. Conda is still supported as an optional environment manager.
+
+
+Install with pip
+----------------
+
+1. Install Python 3.10 or newer.
+
+   On Windows, use the installer from:
+
+    https://www.python.org/downloads/windows/
+
+   Enable "Add python.exe to PATH" during installation.
+
+2. Open PowerShell in this GUI folder.
+
+3. Run:
+
+    python -m pip install .
+
+   Or double-click:
+
+    Install_Experiment_Logbook_Generator.bat
+
+4. Start the app:
+
+    experiment-logbook
+
+On Windows, pip also installs this GUI launcher:
+
+    experiment-logbook-gui
+
+You can also run:
+
+    python -m experiment_logbook
+
+
+Install from a zipped copy
+--------------------------
+
+Copy the zip file to the other computer, then run:
+
+    python -m pip install "C:\path\to\experiment-logbook-generator.zip"
+
+Then start the app:
+
+    experiment-logbook
+
+
+Editable development install
+----------------------------
+
+If you are editing the source code and want changes to apply immediately:
+
+    python -m pip install -e .
+
+
+Optional conda environment
+--------------------------
+
+The conda setup uses a dedicated environment named:
+
+    experiment-logbook
+
+
+Install with conda on another Windows computer
+----------------------------------------------
+
+1. Install Miniconda or Anaconda if it is not already installed.
+
+2. Copy this whole GUI folder to the other computer. Keep these files together:
+
+    environment.yml
+    pyproject.toml
+    logbook_gui.py
+    Experiment_Logbook_Generator.bat
+    Install_Experiment_Logbook_Generator.bat
+    experiment_logbook/
+
+3. Double-click:
+
+    Install_Experiment_Logbook_Generator.bat
+
+If the environment does not already exist, conda will create it.
+If it already exists, conda will update it.
+
+
+Run the app
+-----------
+
+After a conda installation, run:
+
+    conda activate experiment-logbook
+    experiment-logbook
+
+Or double-click:
+
+    Experiment_Logbook_Generator.bat
+
+
+Manual install or update
+------------------------
+
+For conda, open Anaconda Prompt or PowerShell in this GUI folder, then run:
+
+    conda env update -f environment.yml --prune
+
+
+Standard area folder structure
+------------------------------
+
+The preferred structure is:
+
+    area_001/
+      00_pre_heating_xrd/
+      01_heating_xrd/
+      01_heating_xrd_burst/
+      02_quench_xrd/
+      03_post_heating_map/
+      04_1bar_map/
+
+The auto-sort preview can classify common beamline names containing words such as:
+
+    map
+    area
+    spot
+    pre-heating
+    post-heating
+    after heating
+    quench
+    burst
+    1bar
+    1_bar
+    one_bar
+    ambient
+    decompressed
+
+
+Outputs
+-------
+
+The app always writes the readable .txt logbook.
+
+If enabled in the GUI, it can also write:
+
+    *_records.csv
+    *_post_heating_map_points.csv
+    *_1bar_map_points.csv
+
+Post-heating map points and 1 bar map points are exported to separate CSV files.
+
+
+Troubleshooting
+---------------
+
+If double-clicking the app launcher fails, install/update with pip first:
+
+    Install_Experiment_Logbook_Generator.bat
+
+If Python is not found, install Python 3.10 or newer, then run the installer again.
+
+If Windows opens the Microsoft Store when you run python, disable the Python app
+execution aliases in Windows Settings, or reinstall Python from python.org.
+
+If you prefer the manual pip command, run it from this GUI folder:
+
+    python -m pip install .
+
+If you are using conda instead, run:
+
+    conda env update -f environment.yml --prune
+
+If the environment is broken, remove and recreate it:
+
+    conda env remove -n experiment-logbook
+    conda env update -f environment.yml --prune

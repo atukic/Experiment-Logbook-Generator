@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "experiment-logbook-generator"
+version = "0.1.0"
+description = "GUI tool for generating beamline experiment logbooks from HDF5, XRD, and temperature logs."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "h5py",
+]
+
+[project.scripts]
+experiment-logbook = "experiment_logbook.app:main"
+
+[project.gui-scripts]
+experiment-logbook-gui = "experiment_logbook.app:main"
+
+[tool.setuptools.packages.find]
+include = ["experiment_logbook*"]
