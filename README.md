@@ -3,7 +3,7 @@
 GUI tool for generating beamline experiment logbooks from HDF5, XRD, and
 temperature log files.
 
-## Install with pip
+## Install
 
 Install Python 3.10 or newer first. On Windows, use the installer from
 python.org and enable "Add python.exe to PATH".
